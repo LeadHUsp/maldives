@@ -1,0 +1,57 @@
+@import "utils/reset.scss";
+@import "utils/fonts.scss";
+@import "utils/libs.scss";
+@import "utils/vars.scss";
+@import "modules/header.scss";
+@import "modules/navbar.scss";
+@import "modules/about_section.scss";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url("/assets/img/primary_bg.png");
+  background-repeat: repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h2 {
+  @extend %qsand_f;
+  font-size: 36px;
+  line-height: 47px;
+  font-style: normal;
+  letter-spacing: -0.9px;
+  color: $secondary;
+}
+
+h4 {
+  @extend %os_bold;
+  font-size: 15px;
+  color: $primary;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.swiper-slide {
+  background: #fff;
+
+  .swiper-lazy-preloader {
+    border: 4px solid $primary;
+    border-top: 4px solid rgba(0, 0, 0, 0);
+    z-index: 9999;
+  }
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 29px;
+    line-height: 31px;
+  }
+}
+
+// Modules:
+// example: @import "modules/my-module.scss";

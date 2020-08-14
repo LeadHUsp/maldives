@@ -1,0 +1,81 @@
+@import "../utils/mixins.scss";
+@import "../utils/vars.scss";
+
+nav {
+  @extend %qsand_f;
+  position: fixed;
+  top: 0;
+  width: 20%;
+  display: flex;
+  z-index: 9999;
+  padding: 15px;
+  flex-direction: column;
+  align-items: center;
+
+  right: -70%;
+  height: 100vh;
+  background: rgba(4, 25, 48, 0.9);
+  transition: all 500ms ease;
+
+  & a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 300ms ease;
+  }
+
+  & a:hover {
+    color: #f91c3b;
+    transform: translateX(-15px);
+  }
+
+  & ul {
+    padding: 0;
+  }
+
+  & li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    text-align: center;
+  }
+}
+
+.menu-show {
+  right: 0;
+  transition: 400ms ease-in-out;
+}
+
+.close-btn {
+  width: 60px;
+  height: 60px;
+  display: block;
+  cursor: pointer;
+  align-self: flex-start;
+  font-size: 3rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: #f91c3b;
+    transition: 400ms ease-in-out;
+  }
+}
+
+@media (max-width: 1400px) {
+  nav {
+    width: 40%;
+  }
+}
+
+@media (max-width: 720px) {
+  nav {
+    width: 70%;
+    overflow-y: scroll;
+  }
+}

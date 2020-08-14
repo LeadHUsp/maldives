@@ -1,0 +1,11 @@
+@mixin col($width) {
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
+@mixin col-media($max-width, $width) {
+  @media screen and (max-width: $max-width) {
+    flex: 0 0 $width;
+    max-width: $width;
+  }
+}

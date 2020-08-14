@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "BellamyBold";
+  src:
+    url("/assets/fonts/BellamyBold.woff2") format("woff2"),
+    url("/assets/fonts/BellamyBold.woff") format("woff"),
+    url("/assets/fonts/BellamyBold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("/assets/fonts/Quicksand-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Quicksand-Bold.woff") format("woff"),
+    url("/assets/fonts/Quicksand-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open-Sans", sans-serif;
+  src: url("/assets/fonts/OpenSans.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans.woff") format("woff"),
+    url("/assets/fonts/OpenSans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open-Sans-Semibold", sans-serif;
+  src: url("/assets/fonts/OpenSans-Semibold.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans-Semibold.woff") format("woff"),
+    url("/assets/fonts/OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open-Sans-Bold", sans-serif;
+  src: url("/assets/fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("/assets/fonts/OpenSans-Bold.woff") format("woff"),
+    url("/assets/fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
