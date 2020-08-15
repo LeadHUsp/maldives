@@ -5,6 +5,7 @@
 @import "modules/header.scss";
 @import "modules/navbar.scss";
 @import "modules/about_section.scss";
+@import "modules/services.scss";
 
 html,
 body {
@@ -34,6 +35,59 @@ h4 {
   color: $primary;
   line-height: 30px;
   letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h6 {
+  @extend %qsand_f;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@each $bp,
+$size in $breakpoints {
+  @media screen and (min-width: $size) {
+
+    @if($bp==xl) {
+      .container {
+        max-width: 1096px;
+      }
+    }
+
+    @if($bp==xxl) {
+      .container {
+        max-width: 1266px;
+      }
+    }
+
+    @if($bp==sm) {
+      .container {
+        max-width: 600px;
+      }
+    }
+
+    @if($bp==md) {
+      .container {
+        max-width: 720px;
+      }
+    }
+
+    @if($bp==lg) {
+      .container {
+        max-width: 960px;
+      }
+    }
+  }
 }
 
 .swiper-slide {

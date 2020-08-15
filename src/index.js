@@ -4,51 +4,47 @@ import "./js/";
 // SCSS
 import "./assets/scss/main.scss";
 
-import {
-  library,
-  dom
-} from "@fortawesome/fontawesome-svg-core";
-import {
-  faBars,
-  faTimes
-} from "@fortawesome/free-solid-svg-icons";
+import { library, dom } from "@fortawesome/fontawesome-svg-core";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faTwitter,
   faLinkedinIn,
   faGooglePlusG,
-
 } from "@fortawesome/free-brands-svg-icons";
-import Swiper, {
-  Lazy,
-  EffectFade,
-  Navigation,
-  Pagination
-} from "swiper";
+import Swiper, { Lazy, EffectFade, Navigation, Pagination } from "swiper";
 import AOS from "aos";
 
 document.addEventListener("DOMContentLoaded", () => {
   /* AOS library init */
   AOS.init({
-    easing: "ease-out"
+    easing: "ease-out",
+    delay: 400,
   });
   /* fontawesome icons import */
-  library.add(faBars, faFacebookF, faTwitter, faLinkedinIn, faGooglePlusG, faTimes);
+  library.add(
+    faBars,
+    faFacebookF,
+    faTwitter,
+    faLinkedinIn,
+    faGooglePlusG,
+    faTimes
+  );
   dom.watch();
 
   /* header slider initialize */
-  Swiper.use([Lazy, EffectFade, Navigation, Pagination])
+  Swiper.use([Lazy, EffectFade, Navigation, Pagination]);
   const headSwiper = new Swiper(".header__slider-images", {
     grabCursor: true,
     // Disable preloading of all images
     preloadImages: false,
     // Enable lazy loading
     lazy: {
-      loadOnTransitionStart: true
+      loadOnTransitionStart: true,
     },
     navigation: {
-      nextEl: '.header__slider-btn-next',
-      prevEl: '.header__slider-btn-prev',
+      nextEl: ".header__slider-btn-next",
+      prevEl: ".header__slider-btn-prev",
     },
     pagination: {
       el: ".header__slider-progressbar>.progressbar__line",
@@ -60,33 +56,41 @@ document.addEventListener("DOMContentLoaded", () => {
     preloadImages: false,
     // Enable lazy loading
     lazy: {
-      loadOnTransitionStart: true
+      loadOnTransitionStart: true,
     },
-    effect: 'fade',
-  })
+    effect: "fade",
+  });
 
   function changeSlide() {
     var index;
     const totalSlides = headSwiper.slides.length;
-    const prevSlideNumberEl = document.querySelector(".header__slider-prev-page");
-    const activeSlideEl = document.querySelector(".header__slider-page-current");
+    const prevSlideNumberEl = document.querySelector(
+      ".header__slider-prev-page"
+    );
+    const activeSlideEl = document.querySelector(
+      ".header__slider-page-current"
+    );
     const totalSlidesEl = document.querySelector(".header__slider-page-total");
-    const activeSlideProgressbarEl = document.querySelector(".progressbar__page-current");
-    const totalSlidesProgressbarEl = document.querySelector(".progressbar__page-total");
+    const activeSlideProgressbarEl = document.querySelector(
+      ".progressbar__page-current"
+    );
+    const totalSlidesProgressbarEl = document.querySelector(
+      ".progressbar__page-total"
+    );
     if (headSwiper.activeIndex === 0) {
       index = totalSlides - 1;
-      prevSlideNumberEl.textContent = `0${totalSlides}`
+      prevSlideNumberEl.textContent = `0${totalSlides}`;
     } else {
       index = headSwiper.activeIndex - 1;
-      prevSlideNumberEl.textContent = `0${headSwiper.activeIndex}`
+      prevSlideNumberEl.textContent = `0${headSwiper.activeIndex}`;
     }
-    activeSlideEl.textContent = `0${headSwiper.activeIndex+1}`
-    totalSlidesEl.textContent = `/ 0${totalSlides}`
-    activeSlideProgressbarEl.textContent = `0${headSwiper.activeIndex+1}`
-    totalSlidesProgressbarEl.textContent = `0${totalSlides}`
-    prevPageHeadSwiper.slideTo(index)
+    activeSlideEl.textContent = `0${headSwiper.activeIndex + 1}`;
+    totalSlidesEl.textContent = `/ 0${totalSlides}`;
+    activeSlideProgressbarEl.textContent = `0${headSwiper.activeIndex + 1}`;
+    totalSlidesProgressbarEl.textContent = `0${totalSlides}`;
+    prevPageHeadSwiper.slideTo(index);
   }
-  changeSlide()
+  changeSlide();
 
   headSwiper.on("slideChange", () => {
     changeSlide();
@@ -111,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
       iconPath = e.target == document.querySelector(".fa-bars>path"),
       menuShow = nav.classList.contains("menu-show");
 
-
     if (!itsMenu && menuShow && !itsHamburger && !iconHumburger && !iconPath) {
       nav.classList.toggle("menu-show");
     }
@@ -129,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Enable lazy loading
     lazy: {
       loadOnTransitionStart: true,
-      loadPrevNext: true
+      loadPrevNext: true,
     },
     navigation: {
       nextEl: ".about__slider-panel>.about__slider-nav>.about__slider-next",
@@ -138,9 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
     breakpoints: {
       993: {
         slidesPerView: "1.35",
-      }
+      },
     },
-
   });
 
   function changePageAboutSlider() {
@@ -150,13 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPage = aboutSwiper.realIndex + 1;
     activeSlideEl.textContent = `0${currentPage}`;
     if (aboutSwiper.loopedSlides > 1) {
-      totalSlidesEl.textContent = `/ 0${totalSlides}`
+      totalSlidesEl.textContent = `/ 0${totalSlides}`;
     } else {
-      totalSlidesEl.textContent = `/ 0${totalSlides+1}`
+      totalSlidesEl.textContent = `/ 0${totalSlides + 1}`;
     }
   }
   changePageAboutSlider();
   aboutSwiper.on("slideChange", () => {
     changePageAboutSlider();
-  })
+  });
 });

@@ -2,6 +2,115 @@
 @import "../utils/vars.scss";
 
 .services {
+  width: 100%;
   padding-top: 200px;
   padding-bottom: 160px;
+  background: url("/assets/img/services-bg.jpg") repeat;
+  position: relative;
+}
+
+.services__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section__heading {
+  @include col(50%);
+
+  h4 {
+    margin-left: 12.3%;
+    position: relative;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    &::before {
+      content: "";
+      width: 46.7%;
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background: $primary;
+      left: -12%;
+    }
+  }
+
+  h2 {
+    margin-left: 12.3%;
+    margin-top: 28px;
+    color: #fff;
+  }
+}
+
+.services__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 140px;
+}
+
+.services__list-item {
+  @include col(25%);
+  margin-right: 7%;
+
+  h6 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    @extend %os_regular;
+    color: #97adc4;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 1366px) {
+  .services {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .services__list {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section__heading {
+    margin: 0 auto;
+  }
+
+  .services__list {
+    justify-content: space-between;
+  }
+
+  .services__list-item {
+    @include col(50%);
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section__heading {
+    @include col(100%);
+    margin: 0;
+  }
+
+  .services__list-item {
+    @include col(100%);
+    text-align: center;
+  }
 }

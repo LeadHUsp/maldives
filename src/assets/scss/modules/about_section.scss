@@ -6,7 +6,6 @@
   @extend %container;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 95px;
 }
 
 .about__text {
@@ -229,6 +228,7 @@
 
   .about__slider-container {
     padding-top: 110px;
+    max-height: 700px;
   }
 
   .about__slider-panel {
@@ -281,6 +281,8 @@
 }
 
 @media (max-width: 992px) {
+
+
   .about__text {
     margin-top: 50px;
   }
@@ -320,6 +322,10 @@
 }
 
 @media (max-width: 720px) {
+  .about {
+    padding-bottom: 95px;
+  }
+
   .about__text {
     @include col(100%);
     margin-left: 0;
