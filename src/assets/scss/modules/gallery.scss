@@ -12,7 +12,6 @@
 }
 
 .section__heading {
-
   p {
     @extend %os_regular;
     margin-left: 12.3%;
@@ -26,6 +25,7 @@
 .gallery__slider-container {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .gallery__slider {
@@ -34,11 +34,9 @@
   padding-top: 100px;
   margin: 0 auto;
 
-
   .swiper-slide-active {
     transform: scale(1.08);
     box-shadow: 0px 10px 30px 0px rgba(9, 41, 75, 0.25);
-
   }
 
   .swiper-slide {
@@ -87,6 +85,23 @@
   .gallery__slider {
     width: 35%;
     padding-top: 50px;
-
+  }
+  .gallery__slider-btn-next,
+  .gallery__slider-btn-prev {
+    width: 15%;
+  }
+}
+@media (max-width: 576px) {
+  .gallery__slider {
+    width: 100%;
+    padding-top: 50px;
+    .swiper-slide-active {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  .gallery__slider-btn-next,
+  .gallery__slider-btn-prev {
+    width: 25%;
   }
 }
