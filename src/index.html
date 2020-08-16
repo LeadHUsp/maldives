@@ -8,6 +8,20 @@
   </head>
 
   <body>
+    <!-- ------------PRELOADER--------- -->
+    <div class="preloader">
+      <svg
+        class="preloader__image"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <path
+          fill="#f91c3b"
+          d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
+        ></path>
+      </svg>
+    </div>
     <header class="header" id="home">
       <div class="header__inner">
         <div class="header__inner-logo">.mldvs</div>
@@ -409,6 +423,72 @@
         </div>
       </div>
     </section>
-    <section>sss</section>
+    <section class="gallery" id="gallery">
+      <div class="container" data-aos="fade-right">
+        <div class="section__heading">
+          <h4>the sunny side of life</h4>
+          <h2>Maldives an obvious choice for a true holiday of a lifetime.</h2>
+          <p>
+            Maldives is home to perhaps the best beaches in the world; they’re
+            on almost every one of the country’s nearly 1200 islands and are so
+            consistently perfect that it’s hard not to become blasé about them.
+          </p>
+        </div>
+      </div>
+      <div class="gallery__slider-container">
+        <div class="gallery__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                class="swiper-lazy"
+                data-src="./assets/img/gallery-slide-1.jpg"
+                alt="gallery-slide"
+              />
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-lazy"
+                data-src="./assets/img/gallery-slide-2.jpg"
+                alt="gallery-slide"
+              />
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-lazy"
+                data-src="./assets/img/gallery-slide-3.jpg"
+                alt="gallery-slide"
+              />
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-lazy"
+                data-src="./assets/img/gallery-slide-4.jpg"
+                alt="gallery-slide"
+              />
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="swiper-lazy"
+                data-src="./assets/img/gallery-slide-5.jpg"
+                alt="gallery-slide"
+              />
+              <div class="swiper-lazy-preloader"></div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery__slider-nav">
+          <button class="gallery__slider-btn-prev">
+            <img src="./assets/img/prev.svg" alt="" />
+          </button>
+          <button class="gallery__slider-btn-next">
+            <img src="./assets/img/prev.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

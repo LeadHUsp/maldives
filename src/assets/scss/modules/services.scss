@@ -7,6 +7,10 @@
   padding-bottom: 160px;
   background: url("/assets/img/services-bg.jpg") repeat;
   position: relative;
+
+  h2 {
+    color: #fff;
+  }
 }
 
 .services__container {
@@ -14,33 +18,6 @@
   flex-wrap: wrap;
 }
 
-.section__heading {
-  @include col(50%);
-
-  h4 {
-    margin-left: 12.3%;
-    position: relative;
-
-    padding-top: 13px;
-    padding-bottom: 13px;
-
-    &::before {
-      content: "";
-      width: 46.7%;
-      position: absolute;
-      bottom: 0;
-      height: 2px;
-      background: $primary;
-      left: -12%;
-    }
-  }
-
-  h2 {
-    margin-left: 12.3%;
-    margin-top: 28px;
-    color: #fff;
-  }
-}
 
 .services__list {
   width: 100%;
@@ -86,9 +63,7 @@
 }
 
 @media (max-width: 768px) {
-  .section__heading {
-    margin: 0 auto;
-  }
+
 
   .services__list {
     justify-content: space-between;
@@ -104,10 +79,6 @@
 }
 
 @media (max-width: 576px) {
-  .section__heading {
-    @include col(100%);
-    margin: 0;
-  }
 
   .services__list-item {
     @include col(100%);

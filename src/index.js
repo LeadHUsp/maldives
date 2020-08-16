@@ -15,11 +15,20 @@ import {
 import Swiper, { Lazy, EffectFade, Navigation, Pagination } from "swiper";
 import AOS from "aos";
 
+/* preloader  */
+window.onload = function () {
+  document.body.classList.add("loaded_hiding");
+  window.setTimeout(function () {
+    document.body.classList.add("loaded");
+    document.body.classList.remove("loaded_hiding");
+  }, 1000);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   /* AOS library init */
   AOS.init({
     easing: "ease-out",
-    delay: 400,
+    delay: 500,
   });
   /* fontawesome icons import */
   library.add(
@@ -120,9 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* -----about slider initialization----- */
+  /* -----about section slider initialization----- */
 
-  let aboutSwiper = new Swiper(".about__slider-container", {
+  const aboutSwiper = new Swiper(".about__slider-container", {
     slidesPerView: "1",
     centeredSlidesBounds: true,
     spaceBetween: 30,
@@ -161,4 +170,25 @@ document.addEventListener("DOMContentLoaded", () => {
   aboutSwiper.on("slideChange", () => {
     changePageAboutSlider();
   });
+
+  /* -----gallery slider initialization---- */
+
+  const gallerySlider = new Swiper(".gallery__slider", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,
+    preloadImages: false,
+
+    // Enable lazy loading
+    lazy: {
+      loadOnTransitionStart: true,
+      loadPrevNext: true,
+      loadPrevNextAmount: 2,
+    },
+    navigation: {
+      nextEl: ".gallery__slider-btn-next",
+      prevEl: ".gallery__slider-btn-prev",
+    },
+  });
+  gallerySlider.init();
 });

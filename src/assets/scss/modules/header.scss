@@ -9,7 +9,7 @@
 .header__inner {
   position: absolute;
   display: flex;
-  z-index: 9999;
+  z-index: 8000;
   width: 100%;
 }
 
@@ -186,7 +186,7 @@
   @extend %os_bold;
   font-size: 163px;
   margin-top: 28%;
-  z-index: 9999;
+  z-index: 8000;
   top: 0;
   color: $primary;
 }
@@ -195,7 +195,7 @@
   display: flex;
   @include col(100%);
   color: #fff;
-  z-index: 9999;
+  z-index: 8000;
   padding-top: 42px;
   padding-bottom: 42px;
 }
@@ -298,7 +298,7 @@
   border: none;
   display: flex;
   outline: none;
-  z-index: 9999;
+  z-index: 8000;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;

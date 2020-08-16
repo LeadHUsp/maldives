@@ -6,7 +6,52 @@
 @import "modules/navbar.scss";
 @import "modules/about_section.scss";
 @import "modules/services.scss";
+@import "modules/gallery.scss";
 
+
+
+/* --preloader style-- */
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* фоновый цвет */
+  background: #fff;
+  z-index: 9999;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+/* --global style-- */
 html,
 body {
   width: 100%;
@@ -20,13 +65,14 @@ body {
   overflow-x: hidden;
 }
 
+
 h2 {
   @extend %qsand_f;
   font-size: 36px;
   line-height: 47px;
   font-style: normal;
   letter-spacing: -0.9px;
-  color: $secondary;
+
 }
 
 h4 {
@@ -99,10 +145,70 @@ $size in $breakpoints {
   }
 }
 
+.section__heading {
+  @include col(50%);
+
+  h4 {
+    margin-left: 12.3%;
+    position: relative;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    &::before {
+      content: "";
+      width: 46.7%;
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      background: $primary;
+      left: -12%;
+    }
+  }
+
+  h2 {
+    margin-left: 12.3%;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .section__heading {
+    h4 {
+      &::before {
+        width: 51.7%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .section__heading {
+    h4 {
+      &::before {
+        width: 57.7%;
+      }
+    }
+  }
+}
+
 @media (max-width: 992px) {
   h2 {
     font-size: 29px;
     line-height: 31px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section__heading {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .section__heading {
+    @include col(100%);
+    margin: 0;
   }
 }
 
