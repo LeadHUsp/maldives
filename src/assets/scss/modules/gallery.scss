@@ -4,7 +4,7 @@
 .gallery {
   width: 100%;
   padding-top: 130px;
-  padding-bottom: 130px;
+  padding-bottom: 230px;
 
   h2 {
     color: $secondary;
@@ -77,7 +77,6 @@
 @media (max-width: 1280px) {
   .gallery {
     padding-top: 70px;
-    padding-bottom: 70px;
   }
 }
 
@@ -86,20 +85,24 @@
     width: 35%;
     padding-top: 50px;
   }
+
   .gallery__slider-btn-next,
   .gallery__slider-btn-prev {
     width: 15%;
   }
 }
+
 @media (max-width: 576px) {
   .gallery__slider {
     width: 100%;
     padding-top: 50px;
+
     .swiper-slide-active {
       transform: none;
       box-shadow: none;
     }
   }
+
   .gallery__slider-btn-next,
   .gallery__slider-btn-prev {
     width: 25%;

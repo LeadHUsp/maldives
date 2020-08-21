@@ -4,15 +4,27 @@ import "./js/";
 // SCSS
 import "./assets/scss/main.scss";
 
-import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  library,
+  dom
+} from "@fortawesome/fontawesome-svg-core";
+import {
+  faBars,
+  faTimes
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faTwitter,
   faLinkedinIn,
   faGooglePlusG,
+  faTelegramPlane
 } from "@fortawesome/free-brands-svg-icons";
-import Swiper, { Lazy, EffectFade, Navigation, Pagination } from "swiper";
+import Swiper, {
+  Lazy,
+  EffectFade,
+  Navigation,
+  Pagination
+} from "swiper";
 import AOS from "aos";
 
 /* preloader  */
@@ -21,7 +33,7 @@ window.onload = function () {
   window.setTimeout(function () {
     document.body.classList.add("loaded");
     document.body.classList.remove("loaded_hiding");
-  }, 1000);
+  }, 2000);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,7 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     faTwitter,
     faLinkedinIn,
     faGooglePlusG,
-    faTimes
+    faTimes,
+    faTelegramPlane
   );
   dom.watch();
 
@@ -191,4 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   gallerySlider.init();
+
+  /* contact form action */
+  const form = document.querySelector(".contact__form");
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    console.log(form)
+  }
+
+
 });
