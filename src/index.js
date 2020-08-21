@@ -4,28 +4,18 @@ import "./js/";
 // SCSS
 import "./assets/scss/main.scss";
 
-import {
-  library,
-  dom
-} from "@fortawesome/fontawesome-svg-core";
-import {
-  faBars,
-  faTimes
-} from "@fortawesome/free-solid-svg-icons";
+import { library, dom } from "@fortawesome/fontawesome-svg-core";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faTwitter,
   faLinkedinIn,
   faGooglePlusG,
-  faTelegramPlane
+  faTelegramPlane,
 } from "@fortawesome/free-brands-svg-icons";
-import Swiper, {
-  Lazy,
-  EffectFade,
-  Navigation,
-  Pagination
-} from "swiper";
+import Swiper, { Lazy, EffectFade, Navigation, Pagination } from "swiper";
 import AOS from "aos";
+import SmoothScroll from "smooth-scroll";
 
 /* preloader  */
 window.onload = function () {
@@ -53,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
     faTelegramPlane
   );
   dom.watch();
+  /* SmoothScroll init */
+  const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 300,
+    easing: "easeInQuad",
+  });
 
   /* header slider initialize */
   Swiper.use([Lazy, EffectFade, Navigation, Pagination]);
@@ -209,8 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact__form");
   form.onsubmit = (e) => {
     e.preventDefault();
-    console.log(form)
-  }
-
-
+    console.log(form);
+  };
 });
